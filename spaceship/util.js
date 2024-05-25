@@ -43,8 +43,9 @@ class Obj{
             }else{
                 return false
             }
-        }
-    
+    }  
+
+  
 }
 
 class Text{
@@ -58,6 +59,23 @@ class Text{
         canvas.font = size+"px"+" "+font
         canvas.fillStyle = color
         canvas.fillText(this.text,x,y)
+    }
+
+    updateText(pts){
+        this.text = pts
+    }
+}
+
+class Shooter extends Obj{
+    move(){
+        this.y -= 10;
+    }
+}
+
+class Meteor extends Obj{
+    speed = Math.random() *(10 - 2)+2
+    move(){
+        this.y += this.speed;
     }
 }
 
